@@ -60,7 +60,7 @@ const restClient = axios_1.default.create({
     }
 });
 const postmanWorkspaceId = core.getInput('postmanWorkspaceId');
-const specPath = core.getInput('specPath');
+const collectionPath = core.getInput('collectionPath');
 const addLocalSpecFile = (file) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     // Read the file content in memory and convert to JSON
@@ -86,14 +86,14 @@ const addLocalSpecFile = (file) => __awaiter(void 0, void 0, void 0, function* (
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            if (specPath) {
-                core.info(`Using 'specPath' (${specPath}) input to load Postman Collection`);
+            if (collectionPath) {
+                core.info(`Using 'collectionPath' (${collectionPath}) input to load Postman Collection`);
             }
             else {
                 core.info('Using glob pattern to load Postman Collection(s)');
             }
             yield Promise.all([
-                specPath ? addLocalSpecFile(specPath) : loadLocalPostmanCollections(),
+                collectionPath ? addLocalSpecFile(collectionPath) : loadLocalPostmanCollections(),
                 loadRemotePostmanCollections()
             ]);
             if (localPostmanCollections.length === 0) {
