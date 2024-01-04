@@ -4,6 +4,9 @@
   "private": true,
   "description": "Postman Collection Action to push postman collections in the GitHub Repo to a specific Postman Workspace",
   "main": "lib/main.js",
+  "engines": {
+    "node": "16"
+  },
   "scripts": {
     "build": "tsc",
     "format": "prettier --write **/*.ts",
@@ -14,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jneate/postman-collection-action.git"
+    "url": "git+https://github.com/gettilled/postman-collection-action.git"
   },
   "keywords": [
     "actions",
@@ -26,7 +29,7 @@
   "dependencies": {
     "@actions/core": "^1.4.0",
     "@actions/glob": "^0.2.0",
-    "axios": "^0.21.1"
+    "axios": "^1.6.3"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",

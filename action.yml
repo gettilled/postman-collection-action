@@ -11,8 +11,11 @@ inputs:
   postmanTimeout:
     required: false
     description: 'The number of milliseconds to wait for Postman APIs to respond before timing out - Defaults to 15000'
+  collectionPath:
+    required: false
+    description: 'The path to a single collection file you would like to use to update the remote collection'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
 branding:
   icon: 'upload-cloud'
